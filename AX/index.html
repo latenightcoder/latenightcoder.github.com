@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AvidX</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="https://app.avidxchange.net/AvidSuite/Content/Images/favicon.ico"
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2012.3.1315/js/kendo.all.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2012.3.1315/js/kendo.aspnetmvc.min.js"></script>   
+
+    <link href="./Styles/avidx.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="page" class="spa views feed-visible">
+        <div id="header">
+            <div class="logo">
+                <img src="./Content/Avidlogo.gif" alt="AvidXchange">
+            </div>
+            <div class="activity">
+                <span id="asBadge" title="2 new updates">2</span>
+            </div>
+
+
+            <div class="dock-item profile closed popover-trigger-element">
+
+                <a href="#" class="username" onclick="return false;">
+                    <img id="userPicture" src="./Content/GetCachedThumbnailedUserImage.png" alt="Joel D'Souza (jdsouza)" title="Joel D'Souza (jdsouza)" class="user-pic">
+                    <span class="user-menu-expander"><i class="icon-caret-down"></i></span>
+                </a>
+
+                <ul class="user-menu">
+                    <li class="menu-item">
+                        <a href="#">Edit Profile</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="action-log-out" href="#">Log out</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="global-help dock-item popover-trigger-element" title="Help &amp; Information">
+                <i class="icon-question-sign"></i>
+            </div>
+            <div class="global-search dock-item popover-trigger-element" title="Search (Hotkey: &quot;s&quot;)">
+                <i class="icon-search"></i>                
+            </div>
+            <div class="quick-add dock-item" title="Create (Hotkey: &quot;c&quot;)">
+                <i class="icon-plus"></i>
+            </div>
+        </div>
+
+        <nav id="sidemenu" class="navigation-pinned">
+            <div id="menuwrapper">
+                <div id="menuSlider" style="left: -100%;">                    
+                    <div id="subMenu">
+                        <div id="Requisition-menu-container" class="menu-group" style="">
+                            <div class="mode">
+                                <h1>Requisitions<i class="icon-chevron-left"></i></h1>
+                            </div>
+                            <div id="Requisitions-tree-container" data-role="treeview" class="k-widget k-treeview" tabindex="0" role="tree">
+                                <ul class="k-group k-treeview-lines" role="group">
+                                    <li role="treeitem" class="k-item k-first" data-uid="c1c96a58-bdd6-4cc5-a39d-1487d84743dc" aria-selected="true">
+                                        <div class="k-top"><span class="k-in k-state-selected"><a href="#" view-type="predefined">Pending Submission</a></span></div>
+                                    </li>
+                                    <li role="treeitem" class="k-item k-first" data-uid="c1c96a58-bdd6-4cc5-a39d-1487d84743dc" aria-selected="false">
+                                        <div class="k-top"><span class="k-in"><a href="#" view-type="predefined">Pending Approval</a></span></div>
+                                    </li>
+                                    <li role="treeitem" class="k-item" data-uid="36f8e247-bd46-4f23-b853-b12133b58840" data-expanded="true" aria-expanded="true">
+                                        <div class="k-mid"><span class="k-icon k-minus" role="presentation"></span><span class="k-in"><span is-header="true" view-type="Public">Personal Queues</span></span></div>
+                                        <ul class="k-group" role="group" style="display: block;">
+                                            <li role="treeitem" class="k-item" data-uid="59a0cdab-e10a-40ac-83a4-783df2bd9bf2" aria-selected="false">
+                                                <div class="k-mid"><span class="k-in"><a href="#" view-type="Custom" view-id="2">Past week submissions</a></span></div>
+                                            </li>
+                                            <li role="treeitem" class="k-item" data-uid="7f30e63b-f1a1-4960-a6d9-2c006cd55fe0" aria-selected="false">
+                                                <div class="k-top"><span class="k-in"><a href="#" view-type="Custom" view-id="1">This month submissions</a></span></div>
+                                            </li>
+                                            <li role="treeitem" class="k-item k-last" data-uid="4f8c139b-35db-456a-9e71-d4d427890fde">
+                                                <div class="k-bot"><span class="k-in"><a href="#" view-type="Custom" view-id="3">My approved</a></span></div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-control"><a href="#"><i class="icon-chevron-left"></i><span>Hide</span></a></div>
+        </nav>
+
+        <section id="main" class="navigation-pinned">
+            <div id="body">
+                <div id="bodyInner" style="">
+                    <div id="ribbon">
+                        <div class="gridview-subtoolbar ribbon-menu">                            
+                            <div class="view-items-actions">                                
+                                <div class="sorting-options fl">
+                                    <span class="k-button">Save</span>
+                                </div>
+                                <div class="sorting-options fl">
+                                    <span class="k-button">Submit</span>
+                                </div>
+                            </div>
+                            <div class="query-options" style="float: right;">
+                                <div class="display-as-options fl">
+                                    <span class="k-button"><i class="icon-fullscreen" title="Fullscreen"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-details-content wide">
+                        <div class="item-header">
+                            <header>
+                                <span class="item-id Task">
+                                    <span class="type-icon" title="Requisition">Requisition</span>
+                                    <span>123</span>
+                                </span>
+                            </header>
+                        </div>
+                        <br /><br />
+                        <div id="tabstrip" class="item-details-tab-content">
+                            <ul>
+                                <li class="k-state-active">
+                                    Info
+                                </li>
+                                <li>
+                                    Line Items
+                                </li>
+                                <li>
+                                    Distributions
+                                </li>
+                            </ul>
+                            <div class="info">
+                                <div class="item-main-pane">
+                                    <div class="item-details">
+                                        <div class="property">
+                                            <div class="label">Ship To Property</div>
+                                            <div class="value">
+                                                <input id="ShipToProperties" type="text" class="k-widget k-textbox"/>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Vendor</div>
+                                            <div class="value">
+                                                <input id="Vendors" type="text" class="k-widget k-textbox"/>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Customer Account #</div>
+                                            <div class="value">
+                                                <input id="VendorCustomerAccountNumber" type="text" class="k-widget k-textbox"/>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Bill To Property</div>
+                                            <div class="value">
+                                                <input id="BillToProperties" type="text" class="k-widget k-textbox"/>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Ship To Attention</div>
+                                            <div class="value">
+                                                <input id="ShipToAttention" type="text" class="k-widget k-textbox"/>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Preferred Shipping Method</div>
+                                            <div class="value">
+                                                <textarea class="k-widget k-textbox"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Needed By</div>
+                                            <div class="value">
+                                                <input id="NeededByDate" value="2/8/2013" />
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Memo / Remarks</div>
+                                            <div class="value">
+                                                <textarea class="k-widget k-textbox"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Special Shipping Instructions</div>
+                                            <div class="value">
+                                                <textarea class="k-widget k-textbox"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="property">
+                                            <div class="label">Flex Field</div>
+                                            <div class="value">
+                                                <input type="text" class="k-widget k-textbox" value="One"></input>
+                                            </div>
+                                        </div>
+                                        <fieldset id="Attachments">
+                                            <legend><i class="fieldset-expander icon-chevron-right"></i> Attachments (1)</legend>
+                                            <div class="fieldset-content" style="display: none;">
+                                                <div class="value item-details">
+                                                    <ul class="attachments-list">
+                                                        <li>Sole Source Justification.pdf</li>
+                                                    </ul>
+                                                    <div class="post-comment">
+                                                        <div>
+                                                            <input name="files" id="files" type="file" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset id="Workflow">
+                                            <legend><i class="fieldset-expander icon-chevron-right"></i> Workflow</legend>
+                                            <div class="fieldset-content" style="display: none;">
+                                                <div class="value item-details">
+                                                    <div id="WorkflowGrid"></div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset id="History">
+                                            <legend><i class="fieldset-expander icon-chevron-right"></i> History (2)</legend>
+                                            <div class="fieldset-content" style="display: none;">
+                                                <div class="value item-details">
+                                                    <div id="HistoryGrid"></div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset id="Comments">
+                                            <legend><i class="icon-chevron-down fieldset-expander"></i> Comments (1)</legend>
+                                            <div class="item-details">
+                                                <div class="fieldset-content" style="">
+                                                    <ul class="comments-list">
+                                                       <li>
+                                                            <img class="comment-img" src="./Content/GetCachedThumbnailedUserImage.png" alt="Joel D'Souza">
+                                                            <div class="comment-body">
+                                                                <div class="created">
+                                                                    <strong>Joel D'Souza</strong>
+                                                                    <span>21 Feb 2013 01:59</span>:
+                                                                </div>
+                                                                <div>
+                                                                    This is how a longer comment gets displayed.<br><br>
+                                                                    Now, showing multiple carriage returns
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="post-comment">
+                                                        <div>
+                                                            <div class="row-label">Your Comment:</div>
+                                                            <textarea class="k-textbox comment-area autosize"></textarea>
+                                                        </div>
+                                                        <div>
+                                                            <span class="hint">Submit Hotkey: Ctrl + Enter</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="item-secondary-pane">
+                                    <div id="picklist-container" style="display: none">
+                                        <div id="picklist">
+                                            <div>Loading ... </div>
+                                        </div>
+                                        <div id="pager" class="k-pager-wrap"></div>
+                                        <script id="product-picklist-template" type="text/x-kendo-template">
+                                            <div class="tweet k-header">
+                                                <h3>${ProductName}</h3>
+                                                <p>${kendo.toString(UnitPrice, "c")}</p>
+                                            </div>
+                                        </script>
+                                        <script id="picklist-template" type="text/x-kendo-template">
+                                            <div class="tweet k-header">
+                                                <h3>${Name}</h3>
+                                                <div>${Line1}</div>
+                                                <div>${City}</div>
+                                                <div>${State}</div>
+                                            </div>
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="grid-items-main-pane">
+                                    <div id="LineItemsGrid"></div>
+                                </div>
+                                <div class="grid-items-secondary-pane" style="display: none">
+                                    <div id="ContractItemsGrid" style="padding-top: 20px"></div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div id="DistributionLineItemsGrid"></div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="feed" class="feed-hidden">
+
+
+        <div id="feedHeader">
+            <h4 class="fl">Notifications</h4>
+        </div>
+
+        <div id="feedPane" style="overflow: hidden; padding: 0px; width: 400px;">
+
+            <div class="jspContainer" style="width: 400px; height: 870px;">
+                <div class="jspPane" style="padding: 0px; top: 0px; width: 400px;">
+                    <div id="feedNewItemBar" style="display: none;">
+                    </div>
+                    <input id="showOnlyFlagged" name="showOnlyFlagged" type="hidden" value="False"><ul id="feedItemList">
+                        <li data-author="jdsouza">
+                            <img class="fi-img" src="./Content/GetCachedThumbnailedUserImage.png">
+                            <span class="fi-content">Joel D'Souza shared:<br>
+                                GREAT SUCCESS!
+                             </span>
+                            <span class="fi-meta">
+                                <span title="Friday, 1 Feb 2013 at 13:19">47 minutes ago</span>
+
+                            </span>
+                        </li>
+
+
+
+                        <li data-author="jdsouza">
+                            <img class="fi-img" src="./Content/GetCachedThumbnailedUserImage.png">
+                            <span class="fi-content">Joel D'Souza was assigned <a href="#"><span class="item-id invoice"><span class="type-icon" title="Invoice"></span></span>&nbsp;INV001</a> for approval
+
+        </span>
+                            <span class="fi-meta">
+                                <span title="Friday, 1 Feb 2013 at 13:19">47 minutes ago</span>
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loadingContainer"><span class="k-loading-image avidx-loading-image" style="display: none;">&nbsp;</span></div>
+
+    <script src="./Scripts/curl.js" async="true"></script>
+    <script src="./Scripts/jsextlibs.js"></script>
+    <script src="./Scripts/avidx.js"></script>
+    <script type="text/javascript">
+        kendo.culture("en-US");
+        (function () {
+            app.getPath = function (url, ignoreArea) {
+                var path = '/';
+
+                if (ignoreArea === true)
+                    return path + url;
+
+                return path + 'AvidX/' + url;
+            }
+
+            $.cookie('dateOffset', (new Date()).getTimezoneOffset(), { expires: 365, path: '/' });
+        })();
+    </script>
+    <script type="text/javascript" src="./Scripts/workflow.js"></script>
+    <script type="text/javascript" src="./Scripts/history.js"></script>
+    <script type="text/javascript" src="./Scripts/lineItems.js"></script>
+    <script type="text/javascript" src="./Scripts/feed.js"></script>
+    <script type="text/javascript" src="./Scripts/app.js"></script>
+</body>
+</html>
